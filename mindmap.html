@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetik Mindmap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .mindmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .mindmap-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .term-box {
+            position: relative;
+            padding: 10px 20px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            background-color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            min-width: 200px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .term-box:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        .definition {
+            display: none;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .sub-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .line {
+            width: 2px;
+            height: 20px;
+            background-color: black;
+            margin: 5px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Genetik Mindmap</h1>
+
+    <div class="mindmap-container">
+        <!-- Zellzyklus -->
+        <div class="mindmap-group">
+            <div class="term-box" onclick="toggleDefinition('zellzyklus')">Zellzyklus</div>
+            <div class="definition" id="zellzyklus">Abfolge von Zellwachstum und Zellteilung.</div>
+            <div class="line"></div>
+            <div class="sub-group">
+                <div class="term-box" onclick="toggleDefinition('mitose')">Mitose</div>
+                <div class="definition" id="mitose">Zellteilung mit zwei identischen Tochterzellen.</div>
+
+                <div class="term-box" onclick="toggleDefinition('meiose')">Meiose</div>
+                <div class="definition" id="meiose">Bildung haploider Keimzellen.</div>
+
+                <div class="term-box" onclick="toggleDefinition('interphase')">Interphase</div>
+                <div class="definition" id="interphase">Phase vor der Zellteilung.</div>
+            </div>
+        </div>
+
+        <!-- Genetik -->
+        <div class="mindmap-group">
+            <div class="term-box" onclick="toggleDefinition('genetik')">Genetik</div>
+            <div class="definition" id="genetik">Studie der Vererbung und Gene.</div>
+            <div class="line"></div>
+            <div class="sub-group">
+                <div class="term-box" onclick="toggleDefinition('gen')">Gen</div>
+                <div class="definition" id="gen">DNA-Abschnitt mit Protein-Information.</div>
+
+                <div class="term-box" onclick="toggleDefinition('proteinbiosynthese')">Proteinbiosynthese</div>
+                <div class="definition" id="proteinbiosynthese">Bildung von Proteinen.</div>
+            </div>
+        </div>
+
+        <!-- Chromosomen -->
+        <div class="mindmap-group">
+            <div class="term-box" onclick="toggleDefinition('chromosomen')">Chromosomen</div>
+            <div class="definition" id="chromosomen">Träger der genetischen Informationen.</div>
+            <div class="line"></div>
+            <div class="sub-group">
+                <div class="term-box" onclick="toggleDefinition('diploid')">Diploid</div>
+                <div class="definition" id="diploid">Zellen mit zwei Chromosomensätzen.</div>
+
+                <div class="term-box" onclick="toggleDefinition('chromatide')">Chromatide</div>
+                <div class="definition" id="chromatide">Hälfte eines Chromosoms nach Replikation.</div>
+            </div>
+        </div>
+
+        <!-- Zelle -->
+        <div class="mindmap-group">
+            <div class="term-box" onclick="toggleDefinition('zelle')">Zelle</div>
+            <div class="definition" id="zelle">Kleinste lebende Einheit eines Organismus.</div>
+            <div class="line"></div>
+            <div class="sub-group">
+                <div class="term-box" onclick="toggleDefinition('cytoplasma')">Cytoplasma</div>
+                <div class="definition" id="cytoplasma">Zellflüssigkeit mit Organellen.</div>
+
+                <div class="term-box" onclick="toggleDefinition('zellkern')">Zellkern</div>
+                <div class="definition" id="zellkern">Enthält DNA der Zelle.</div>
+            </div>
+        </div>
+
+        <!-- Erbmaterial -->
+        <div class="mindmap-group">
+            <div class="term-box" onclick="toggleDefinition('erbmaterial')">Erbmaterial</div>
+            <div class="definition" id="erbmaterial">DNA mit genetischer Information.</div>
+            <div class="line"></div>
+            <div class="sub-group">
+                <div class="term-box" onclick="toggleDefinition('dna')">DNA</div>
+                <div class="definition" id="dna">Träger der genetischen Information.</div>
+
+                <div class="term-box" onclick="toggleDefinition('replikation')">Replikation</div>
+                <div class="definition" id="replikation">Verdopplung der DNA vor Zellteilung.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDefinition(id) {
+            var definition = document.getElementById(id);
+            if (definition.style.display === "none" || definition.style.display === "") {
+                definition.style.display = "block";
+            } else {
+                definition.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
